@@ -1,6 +1,6 @@
 # _To Do List_
 
-#### _Program which allows user to add items to a to do list and view their to do list, 04/24/2019_
+#### _Program which allows user to add items to a to do list and view their to do list, 05/08/2019_
 
 #### By _**Marc Davies and Brooke Kullberg**_
 
@@ -22,8 +22,7 @@ _To clone and launch the application:_
 
 * _Clone from GitHub_
 * _$cd ToDoList.Solution/ToDoList_
-* _$dotnet restore to install packages from the .csproj file_
-* _$dotnet run to start the application_
+* _$dotnet build then $dotnet run to start the application_
 * _Launch [http://localhost:5000/](http://localhost:5000/) in your browser_
 
 ## Specs
@@ -45,7 +44,7 @@ _To clone and launch the application:_
 
 ## Known Bugs
 
-_When adding an item to a category, an error message will appear. The item does get added though._
+_None as of last update._
 
 ## Support and contact details
 
@@ -53,7 +52,7 @@ _Please contact me at marcdaviesriot@gmail.com if you run into any issues or hav
 
 ## Technologies Used
 
-_C#_
+_C#, .NET, MVC, MySQL_
 
 ### License
 

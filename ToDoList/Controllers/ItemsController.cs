@@ -4,10 +4,8 @@ using System.Collections.Generic;
 
 namespace ToDoList.Controllers
 {
-
     public class ItemsController : Controller
     {
-
         [HttpGet("/categories/{categoryId}/items/new")]
         public ActionResult New(int categoryId)
         {
@@ -61,7 +59,5 @@ namespace ToDoList.Controllers
             model.Add("item", item);
             return View("Show", model);
         }
-
     }
-
 }

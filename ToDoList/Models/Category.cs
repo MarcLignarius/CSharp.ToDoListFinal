@@ -4,10 +4,8 @@ using System;
 
 namespace ToDoList.Models
 {
-
     public class Category
     {
-
         private string _name;
         private int _id;
 
@@ -159,7 +157,5 @@ namespace ToDoList.Models
                 conn.Dispose();
             }
         }
-
     }
-
 }
