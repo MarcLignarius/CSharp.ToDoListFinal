@@ -34,7 +34,7 @@ namespace ToDoList.Tests
             //Arrange
             DateTime dueDate =  new DateTime(1999, 12, 24);
             string description = "Walk the dog.";
-            Item newItem = new Item(description, dueDate);
+            Item newItem = new Item("test", dueDate);
 
             //Act
             string result = newItem.GetDescription();
@@ -49,7 +49,7 @@ namespace ToDoList.Tests
             //Arrange
             DateTime dueDate =  new DateTime(1999, 12, 24);
             string description = "Walk the dog.";
-            Item newItem = new Item(description, dueDate);
+            Item newItem = new Item("test", dueDate);
 
             //Act
             string updatedDescription = "Do the dishes";
@@ -58,6 +58,37 @@ namespace ToDoList.Tests
 
             //Assert
             Assert.AreEqual(updatedDescription, result);
+        }
+
+        [TestMethod]
+        public void GetCompleted_ReturnsCompleted_Boolean()
+        {
+            //Arrange
+            DateTime dueDate =  new DateTime(1999, 12, 24);
+            bool completed = false;
+            Item newItem = new Item("test", dueDate, completed);
+
+            //Act
+            bool result = newItem.GetCompleted();
+
+            //Assert
+            Assert.AreEqual(completed, result);
+        }
+
+        [TestMethod]
+        public void SetCompleted_SetCompleted_Boolean()
+        {
+            //Arrange
+            DateTime dueDate =  new DateTime(1999, 12, 24);
+            Item newItem = new Item("test", dueDate);
+
+            //Act
+            bool updatedCompleted = true;
+            newItem.SetCompleted(updatedCompleted);
+            bool result = newItem.GetCompleted();
+
+            //Assert
+            Assert.AreEqual(updatedCompleted, result);
         }
 
         [TestMethod]
@@ -175,8 +206,8 @@ namespace ToDoList.Tests
         public void GetCategories_ReturnsAllItemCategories_CategoryList()
         {
             //Arrange
-            DateTime itemDueDate =  new DateTime(1999, 12, 24);
-            Item testItem = new Item("Mow the lawn", itemDueDate);
+            DateTime dueDate =  new DateTime(1999, 12, 24);
+            Item testItem = new Item("Mow the lawn", dueDate);
             testItem.Save();
             Category testCategory1 = new Category("Home stuff");
             testCategory1.Save();
@@ -196,8 +227,8 @@ namespace ToDoList.Tests
         public void AddCategory_AddsCategoryToItem_CategoryList()
         {
             //Arrange
-            DateTime itemDueDate =  new DateTime(1999, 12, 24);
-            Item testItem = new Item("Mow the lawn", itemDueDate);
+            DateTime dueDate =  new DateTime(1999, 12, 24);
+            Item testItem = new Item("Mow the lawn", dueDate);
             testItem.Save();
             Category testCategory = new Category("Home stuff");
             testCategory.Save();
@@ -216,11 +247,11 @@ namespace ToDoList.Tests
         public void Delete_DeletesItemAssociationsFromDatabase_ItemList()
         {
             //Arrange
-            DateTime itemDueDate =  new DateTime(1999, 12, 24);
+            DateTime dueDate =  new DateTime(1999, 12, 24);
             Category testCategory = new Category("Home stuff");
             testCategory.Save();
             string testDescription = "Mow the lawn";
-            Item testItem = new Item(testDescription, itemDueDate);
+            Item testItem = new Item(testDescription, dueDate);
             testItem.Save();
 
             //Act
@@ -231,7 +262,7 @@ namespace ToDoList.Tests
 
             //Assert
             CollectionAssert.AreEqual(testCategoryItems, resultCategoryItems);
-        }      
+        }
     }
 }
 

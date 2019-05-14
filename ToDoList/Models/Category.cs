@@ -85,7 +85,8 @@ namespace ToDoList.Models
                 int itemId = rdr.GetInt32(0);
                 string itemDescription = rdr.GetString(1);
                 DateTime itemDueDate = rdr.GetDateTime(2);
-                Item newItem = new Item(itemDescription, itemDueDate, itemId);
+                bool itemCompleted = rdr.GetBoolean(3);
+                Item newItem = new Item(itemDescription, itemDueDate, itemCompleted, itemId);
                 items.Add(newItem);
             }
             conn.Close();
@@ -159,7 +160,7 @@ namespace ToDoList.Models
                 conn.Dispose();
             }
         }
-        
+
         public void Delete()
         {
             MySqlConnection conn = DB.Connection();
