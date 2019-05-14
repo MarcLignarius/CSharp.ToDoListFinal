@@ -7,6 +7,7 @@ namespace ToDoList.Controllers
 {
     public class CategoriesController : Controller
     {
+
         [HttpGet("/categories")]
         public ActionResult Index()
         {
@@ -21,6 +22,12 @@ namespace ToDoList.Controllers
             newCategory.Save();
             List<Category> allCategories = Category.GetAll();
             return View("Index", allCategories);
+        }
+
+        [HttpGet("/categories/new")]
+        public ActionResult New()
+        {
+          return View();
         }
 
         [HttpGet("/categories/{id}")]
@@ -52,13 +59,6 @@ namespace ToDoList.Controllers
         //     return View(allCategories);
         // }
         //
-        [HttpGet("/categories/new")]
-        public ActionResult New()
-        {
-          return View();
-        }
         //
-
-
     }
 }

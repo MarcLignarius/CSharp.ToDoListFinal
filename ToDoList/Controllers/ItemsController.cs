@@ -52,6 +52,18 @@ namespace ToDoList.Controllers
             return RedirectToAction("Show",  new { id = itemId });
         }
 
+        // [HttpPost("/categories/{categoryId}/items/{itemId}")]
+        // public ActionResult Update(int categoryId, int itemId, string newDescription, DateTime newDueDate, bool newCompleted)
+        // {
+        //     Item item = Item.Find(itemId);
+        //     item.Edit(newDescription, newDueDate, newCompleted);
+        //     Dictionary<string, object> model = new Dictionary<string, object>();
+        //     Category category = Category.Find(categoryId);
+        //     model.Add("category", category);
+        //     model.Add("item", item);
+        //     return View("Show", model);
+        // }
+
         // [HttpPost("/categories/{categoryId}/items/{itemId}/delete")]
         // public ActionResult Delete(int categoryId, int itemId)
         // {

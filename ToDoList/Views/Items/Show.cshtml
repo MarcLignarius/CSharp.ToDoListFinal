@@ -11,7 +11,7 @@
     <div class="jumbotron">
       <h1>To Do List</h1>
     </div>
-    <h5>Details for to do item: @Model["selectedItem"].GetDescription()<h5><br>
+    <h5>Details for to do item: @Model["selectedItem"].GetDescription()</h5><br>
     @if (@Model["itemCategories"].Count != 0)
     {
     <h5>This item is currently found in these categories:</h5><br>
@@ -31,7 +31,7 @@
       </select><br>
       <br>
       <button type='submit' class="btn btn-dark">Add</button>
-
+      <br>
     </form>
     <div id="space">
     </div>
