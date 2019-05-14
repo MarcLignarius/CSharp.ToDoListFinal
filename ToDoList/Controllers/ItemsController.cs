@@ -16,9 +16,8 @@ namespace ToDoList.Controllers
         }
 
         [HttpPost("/items")]
-        public ActionResult Create(string description)
+        public ActionResult Create(string description, DateTime dueDate)
         {
-            DateTime dueDate =  new DateTime(1999, 12, 24);
             Item newItem = new Item(description, dueDate);
             newItem.Save();
             List<Item> allItems = Item.GetAll();
@@ -52,7 +51,7 @@ namespace ToDoList.Controllers
             item.AddCategory(category);
             return RedirectToAction("Show",  new { id = itemId });
         }
-        
+
         // [HttpPost("/categories/{categoryId}/items/{itemId}/delete")]
         // public ActionResult Delete(int categoryId, int itemId)
         // {

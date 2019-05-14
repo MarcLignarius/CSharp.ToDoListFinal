@@ -52,11 +52,11 @@ namespace ToDoList.Controllers
         //     return View(allCategories);
         // }
         //
-        // [HttpGet("/categories/new")]
-        // public ActionResult New()
-        // {
-        //   return View();
-        // }
+        [HttpGet("/categories/new")]
+        public ActionResult New()
+        {
+          return View();
+        }
         //
 
 

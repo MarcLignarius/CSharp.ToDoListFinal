@@ -35,9 +35,9 @@ namespace ToDoList.Models
             return dueDateToString;
         }
 
-        public void SetDueDate(DateTime dueDate)
+        public void SetDueDate(DateTime newDueDate)
         {
-            _dueDate = dueDate;
+            _dueDate = newDueDate;
         }
 
         public bool GetCompleted()
@@ -45,9 +45,9 @@ namespace ToDoList.Models
             return _completed;
         }
 
-        public void SetCompleted(bool completed)
+        public void SetCompleted(bool newCompleted)
         {
-            _completed = completed;
+            _completed = newCompleted;
         }
 
         public int GetId()
@@ -169,12 +169,12 @@ namespace ToDoList.Models
             }
         }
 
-        public void Edit(string newDescription)
+        public void Edit(string newDescription, DateTime newDueDate, bool newCompleted)
         {
             MySqlConnection conn = DB.Connection();
             conn.Open();
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"UPDATE items SET description = @newDescription WHERE id = @searchId;";
+            cmd.CommandText = @"UPDATE items SET description = @newDescription, dueDate = @newDueDate, completed = @newCompleted WHERE id = @searchId;";
             MySqlParameter searchId = new MySqlParameter();
             searchId.ParameterName = "@searchId";
             searchId.Value = _id;
@@ -183,8 +183,18 @@ namespace ToDoList.Models
             description.ParameterName = "@newDescription";
             description.Value = newDescription;
             cmd.Parameters.Add(description);
+            MySqlParameter dueDate = new MySqlParameter();
+            dueDate.ParameterName = "@newDueDate";
+            dueDate.Value = newDueDate;
+            cmd.Parameters.Add(dueDate);
+            MySqlParameter completed = new MySqlParameter();
+            completed.ParameterName = "@newCompleted";
+            completed.Value = newCompleted;
+            cmd.Parameters.Add(completed);
             cmd.ExecuteNonQuery();
             _description = newDescription;
+            _dueDate = newDueDate;
+            _completed = newCompleted;
             conn.Close();
             if (conn != null)
             {

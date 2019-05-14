@@ -34,7 +34,7 @@ namespace ToDoList.Tests
             //Arrange
             DateTime dueDate =  new DateTime(1999, 12, 24);
             string description = "Walk the dog.";
-            Item newItem = new Item("test", dueDate);
+            Item newItem = new Item(description, dueDate);
 
             //Act
             string result = newItem.GetDescription();
@@ -190,16 +190,21 @@ namespace ToDoList.Tests
         {
             //Arrange
             DateTime dueDate =  new DateTime(1999, 12, 24);
+            bool completed = false;
+            int id = 0;
             Item testItem = new Item("Walk the Dog", dueDate);
             testItem.Save();
-            string secondDescription = "Mow the lawn";
+            string newDescription = "Mow the lawn";
+            DateTime newDueDate = new DateTime(2019, 12, 24);
+            bool newCompleted = true;
+            int newId = 1;
 
             //Act
-            testItem.Edit(secondDescription);
+            testItem.Edit(newDescription, newDueDate, newCompleted);
             string result = Item.Find(testItem.GetId()).GetDescription();
 
             //Assert
-            Assert.AreEqual(secondDescription, result);
+            Assert.AreEqual(newDescription, result);
         }
 
         [TestMethod]
