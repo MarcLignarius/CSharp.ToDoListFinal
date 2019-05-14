@@ -10,17 +10,31 @@
   <div class="container">
     <div class="jumbotron">
       <h1>To Do List</h1>
-      <em>You can find more details about the to do item here.</em>
     </div>
-    <h3>To do: @Model["item"].GetDescription()</h3>
-    <h3>Due Date: @Model["item"].GetDueDate()</h3>
-    <h3>Category: @Model["category"].GetName()</h3>
-    <a href='/categories/@Model["category"].GetId()/items/@Model["item"].GetId()/edit' class="btn btn-dark">Edit this item</a>
-    <form action="/categories/@Model["category"].GetId()/items/@Model["item"].GetId()/delete" method="post">
-      <button type="submit" class="btn btn-dark">Delete this item</button>
+    <h5>Details for to do item: @Model["selectedItem"].GetDescription()<h5><br>
+    @if (@Model["itemCategories"].Count != 0)
+    {
+    <h5>This item is currently found in these categories:</h5><br>
+      @foreach (var category in @Model["itemCategories"])
+      {
+        <p>@category.GetName()</p><br>
+      }
+    }
+    <h5>Add a category to this item:</h5><br>
+    <form action='/items/@Model["selectedItem"].GetId()/categories/new' method='post'>
+      <label for='categoryId'>Select a category:</label><br>
+      <select id='categoryId' name='categoryId' type='text'><br>
+        @foreach (var category in @Model["allCategories"])
+        {
+          <option value='@category.GetId()'>@category.GetName()</option><br>
+        }
+      </select><br>
+      <button type='submit' class="btn btn-dark">Add</button>
     </form>
-    <a href="/categories/@Model["category"].GetId()/items/new" class="btn btn-dark">Add another item</a>
-    <a href="/categories" class="btn btn-dark">View all categories</a>
+    <div id="space">
+    </div>
+    <hr>
+    <a href="/">Home</a>
   </div>
 </body>
 </html>

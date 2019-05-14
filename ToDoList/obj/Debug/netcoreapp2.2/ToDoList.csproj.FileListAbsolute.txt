@@ -45,11 +45,9 @@ C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\ToDoLi
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\ToDoList.TagHelpers.input.cache
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\ToDoList.TagHelpers.output.cache
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\ToDoList.RazorCoreGenerate.cache
-C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\Razor\Views\Categories\Index.g.cshtml.cs
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\Razor\Views\Categories\New.g.cshtml.cs
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\Razor\Views\Categories\Show.g.cshtml.cs
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\Razor\Views\Items\DeleteItem.g.cshtml.cs
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\Razor\Views\Items\Edit.g.cshtml.cs
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\Razor\Views\Items\Index.g.cshtml.cs
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\Razor\Views\Items\New.g.cshtml.cs
@@ -60,3 +58,6 @@ C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\ToDoLi
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\ToDoList.dll
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\ToDoList.pdb
 C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\ToDoList.csproj.CopyComplete
+C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\Razor\Views\Items\Delete.g.cshtml.cs
+C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\Razor\Models\Index.g.cshtml.cs
+C:\Users\mimim\desktop\ToDoList.Solution\ToDoList\obj\Debug\netcoreapp2.2\Razor\Views\Categories\Index.g.cshtml.cs

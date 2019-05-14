@@ -14,12 +14,6 @@ namespace ToDoList.Controllers
             return View(allCategories);
         }
 
-        [HttpGet("/categories/new")]
-        public ActionResult New()
-        {
-          return View();
-        }
-
         [HttpPost("/categories")]
         public ActionResult Create(string categoryName)
         {
@@ -35,22 +29,36 @@ namespace ToDoList.Controllers
             Dictionary<string, object> model = new Dictionary<string, object>();
             Category selectedCategory = Category.Find(id);
             List<Item> categoryItems = selectedCategory.GetItems();
+            List<Item> allItems = Item.GetAll();
             model.Add("category", selectedCategory);
-            model.Add("items", categoryItems);
+            model.Add("categoryItems", categoryItems);
+            model.Add("allItems", allItems);
             return View(model);
         }
 
-        [HttpPost("/categories/{categoryId}/items")]
-        public ActionResult Create(int categoryId, string itemDescription, DateTime itemDueDate)
+        [HttpPost("/categories/{categoryId}/items/new")]
+        public ActionResult AddItem(int categoryId, int itemId)
         {
-            Dictionary<string, object> model = new Dictionary<string, object>();
-            Category foundCategory = Category.Find(categoryId);
-            Item newItem = new Item(itemDescription, itemDueDate, categoryId);
-            newItem.Save();
-            List<Item> categoryItems = foundCategory.GetItems();
-            model.Add("items", categoryItems);
-            model.Add("category", foundCategory);
-            return View("Show", model);
+            Category category = Category.Find(categoryId);
+            Item item = Item.Find(itemId);
+            category.AddItem(item);
+            return RedirectToAction("Show",  new { id = categoryId });
         }
+
+        // [HttpGet("/categories")]
+        // public ActionResult Index()
+        // {
+        //     List<Category> allCategories = Category.GetAll();
+        //     return View(allCategories);
+        // }
+        //
+        // [HttpGet("/categories/new")]
+        // public ActionResult New()
+        // {
+        //   return View();
+        // }
+        //
+
+
     }
 }

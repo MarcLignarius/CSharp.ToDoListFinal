@@ -10,13 +10,16 @@
   <div class="container">
     <div class="jumbotron">
       <h1>To Do List</h1>
-      <em>You can add a new category here.</em>
     </div>
+    <h5>Add a new category:</h5><br>
     <form action="/categories" method="post">
-      <input id="categoryName" name="categoryName" type="text">
-      <button type="submit" class="btn btn-dark">Add new category</button>
+      <label for="categoryName">Category name:</label>
+      <input id="categoryName" name="categoryName" type="text"><br>
+      <button type="submit" class="btn btn-dark">Add</button>
     </form>
-    <br>
+    <div id="space">
+    </div>
+    <hr>
     <a href="/categories" class="btn btn-dark">Back to categories</a>
     <a href="/" class="btn btn-dark">Back to homepage</a>
   </div>
