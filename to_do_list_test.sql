@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 08, 2019 at 10:45 PM
+-- Generation Time: May 16, 2019 at 09:59 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -36,13 +36,26 @@ CREATE TABLE `categories` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `categories_items`
+--
+
+CREATE TABLE `categories_items` (
+  `id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `items`
 --
 
 CREATE TABLE `items` (
   `id` int(11) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `dueDate` date NOT NULL,
+  `due_date` date NOT NULL,
+  `completed` tinyint(1) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -54,6 +67,12 @@ CREATE TABLE `items` (
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `categories_items`
+--
+ALTER TABLE `categories_items`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -70,13 +89,19 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `categories_items`
+--
+ALTER TABLE `categories_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
