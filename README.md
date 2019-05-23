@@ -21,8 +21,8 @@ _To download and import the database:_
 _To clone and launch the application:_
 
 |   |   |
-| :-------------: | -----:|
-| Clone from GitHub | ![Image of GitHub](https://i.imgur.com/cDAopFr.png) |
+| ------------- |:-------------:| -----:|
+| Clone from GitHub | ![Image of GitHub](https://i.imgur.com/cDAopFr.png) | |
 
 * _Clone from GitHub_
 * _$cd ToDoList.Solution/ToDoList_
