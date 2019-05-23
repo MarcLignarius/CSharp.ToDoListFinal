@@ -20,7 +20,7 @@ _To download and import the database:_
 
 _To clone and launch the application:_
 
-| Step &nbsp; &nbsp; &nbsp; &nbsp;  | Reference  |
+| Step &nbsp;&nbsp;&nbsp;&nbsp;  | Reference  |
 | :-------------: | -----:|
 | Clone from GitHub | ![Image of GitHub](https://i.imgur.com/cDAopFr.png) |
 
